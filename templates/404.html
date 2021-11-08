@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block cuerpo %}
+<div class="eh">
+    <div class="fila">
+        <div class="c5"><p>Lo sentimos, la página se encuentra actualmente en construcción...</p></div>
+        <div class="c5"><img src='{{ url_for("static", filename="media/404.png") }}' alt="404" width="400px"></div>
+    </div>
+</div>
+{% endblock %}

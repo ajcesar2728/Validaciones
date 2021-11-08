@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang='es'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>Cambio de Contraseña</title>
+    </head>
+        <style>
+            body {
+                background-color    :lightgray;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            
+            .cclave {
+                width               : 40vw;
+                padding             : 16px;
+                border-radius       : 10px;
+                background-color    : mintcream;
+                position            : absolute;
+                top                 : 15vh;
+                left                : 30vw;
+            }
+
+            .fila {
+                height              :30px;
+            }
+
+            .c2 {
+                width               :20%;
+                display             :inline;
+                float               :right;
+                overflow-x          :hidden;
+            }
+
+            .c3 {
+                width               :30%;
+                display             :inline;
+                float               :left;
+                overflow-x          :hidden;
+            }
+
+            .c6 {
+                width               :60%;
+                display             :inline;
+                float               :left;
+                overflow-x          :hidden;
+            }
+
+            .c7 {
+                width               :70%;
+                display             :inline;
+                float               :right;
+                overflow-x          :hidden;
+            }
+
+            input{
+                width              :90%;
+            }
+
+            input:invalid {
+                border              :1px dashed red;
+            }
+
+            input[type=button], input[type=submit], input[type=reset] {
+                border-color        : black;
+                border-width        : 2px;
+                border-radius       : 4px;
+                color               : white;
+                text-transform      : capitalize;
+                cursor              : pointer;
+                display             : inline-block;
+                font-size           : 14px;
+                height              : 40px;
+                text-align          : center !important;
+                background-color    : royalblue;
+            }
+
+            input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+                background-color    : orange;
+                color               : black;
+
+            }
+
+            .requerido{
+                color: red;
+            }
+
+
+        </style>
+            <body>
+                <div class='cclave'>
+                    <div class='fila'>
+                        <div class='c3'>Usuario <span class='requerido'>*</span></div>
+                        <div class='c7'><input type='text' name='usrtxt' id='usrtxt' value='prueba' readonly /></div>
+                    </div>
+                    <div class='fila'>
+                        <div class='c3'>Clave actual <span class='requerido'>*</span></div>
+                        <div class='c7'><input type='password' name='actxt' id='acttxt' required minlength="8" maxlength="40" /></div>
+                    </div>
+                    <div class='fila'>
+                        <div class='c3'>Nueva Clave <span class='requerido'>*</span></div>
+                        <div class='c7'><input type='password' name='nuetxt' id='nuetxt' required minlength="8" maxlength="40" /></div>
+                    </div>
+                    <div class='fila'>
+                        <div class='c3'>Verifique Clave <span class='requerido'>*</span></div>
+                        <div class='c7'><input type='password' name='vertxt' id='vertxt' required minlength="8" maxlength="40" /></div>
+                    </div>
+                    <div class='fila'>
+                        <br />
+                        <hr />
+                        <br />
+                    </div>
+                    <div class='fila'>
+                        <div class='c6'>&nbsp;</div>
+                        <div class='c2'><input type='button' name='btnenv' id='btnenv' value='Cambiar' /></div>
+                        <div class='c2'><input type='button' name='btncan' id='btncan' value='Cancelar' /></div>
+                    </div>
+                </div>
+            </body>
+</html>

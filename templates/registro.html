@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block cuerpo %}
+    <form name='fregistro' id='fregistro' method='POST' action='/registro/'>
+        <div class='registro'>
+            <div class='fila'>
+                <div class='c3'>Tipo de Identificación <span class='requerido'>*</span></div>
+                <div class='c7'>
+                    <select name='tidtxt'>
+                        <option value='NA'>Seleccione</option>
+                        <option value='CC'>Cédula de ciudadanía</option>
+                        <option value='TI'>Tarjeta de identidad</option>
+                        <option value='PEP'>Permiso Especial de Permanencia</option>
+                        <option value='NUIP'>Número único de identificación personal</option>
+                    </select>
+                </div>
+            </div>
+            <div class='fila'>
+                <div class='c3'>Número de identificación <span class='requerido'>*</span></div>
+                <div class='c3'><input type='text' name='nidtxt' id='nidtxt' required minlength="4" maxlength="40" /></div>
+            </div>
+            <div class='fila'>
+                <div class='c3'>Nombres y apellidos <span class='requerido'>*</span></div>
+                <div class='c7'><input type='text' name='nomtxt' id='nomtxt' required minlength="1" maxlength="120" /></div>
+            </div>
+            <div class='fila'>
+                <div class='c3'>Correo electrónico <span class='requerido'>*</span></div>
+                <div class='c7'><input type='email' name='ematxt' id='nematxt' required minlength="20" maxlength="120" /></div>
+            </div>
+            <div class='fila'>
+                <div class='c3'>Usuario <span class='requerido'>*</span></div>
+                <div class='c3'><input type='text' name='usutxt' id='usutxt' required minlength="8" maxlength="40" /></div>
+            </div>
+            <div class='fila'>
+                <div class='c3'>Clave <span class='requerido'>*</span></div>
+                <div class='c3'><input type='password' name='clatxt' id='clatxt' required minlength="8" maxlength="40" /></div>
+            </div>
+            <div class='fila'>
+                <div class='c3'>Verificación de clave <span class='requerido'>*</span></div>
+                <div class='c3'><input type='password' name='vertxt' id='vertxt' required minlength="8" maxlength="40" /></div>
+            </div>
+            <div class='fila'>
+                <br />
+                <hr />
+                <br />
+            </div>
+            <div class='fila'>
+                <div class='c6'>&nbsp;</div>
+                <div class='c2'><input type='submit' name='btnenv' id='btnenv' value='Registrar' /></div>
+                <div class='c2'><input type='button' name='btncan' id='btncan' value='Cancelar' onclick='alert("Cancelaste el Registro");' /></div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

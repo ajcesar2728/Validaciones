@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href='{{ url_for("static", filename="css/miestilo.css")}}'/>
+    <title>Ejercicio de Nivelacion - Ciclo 3</title>
+</head>
+<body>
+    <cabecera>
+        <div class="nav ">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                {% if 'usr' in session %}
+                <li><a href="/vermensaje">Ver mensajes</a></li>
+                <li><a href="/enviamensaje">Enviar mensajes</a></li>
+                <li><a href="/logout">Cerrar sesión</a></li>
+                {% else %}
+                <li><a href="/login">Iniciar sesión</a></li>
+                {% endif %}
+                <li><a href="/registro">Registrate</a></li>
+
+            </ul>
+        </div>
+    </cabecera>
+    <cuerpo>
+        {% block cuerpo %}{% endblock %}
+    </cuerpo>
+    <pie>
+        &copy;2021 by Alberto César E.
+    </pie>
+</body>
+</html>
