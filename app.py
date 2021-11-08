@@ -15,7 +15,7 @@ def index():
 @app.route("/registro/", methods=['GET', 'POST'])
 def index():
     if request.method=='GET':
-         return render_template("registro.html")
+        return render_template("registro.html")
     else:
         # 1. Recuperar los datos del formulario
         tid = escape(request.form['tidtxt'])
