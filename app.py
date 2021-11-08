@@ -15,7 +15,7 @@ def index():
 @app.route("/registro/", methods=['GET', 'POST'])
 def index():
     if request.method=='GET':
-        return render_template("registro.html")
+        return render_template("registro.html", nombre='Registro')
     else:
         # 1. Recuperar los datos del formulario
         tid = escape(request.form['tidtxt'])
@@ -56,8 +56,13 @@ def index():
         if not swError:
             pwd = generate_password_hash(cla)
             sql = 'INSERT INTO inscritos(tid, nid, nom, ema, log, cla) VALUES(?, ?, ?, ?, ?, ?)'
+            res = accion(sql, (tid, nid, nom, ema, usu, pwd))
+            if res==0:
+                flash("Error: los datos no se pudieron guardar!")
+            else:
+                flash("OK: los datos se almacenaron con éxito")
+        return render_template('registro.html', nombre='Register')
             
-
 
 if __name__=='__main__':
     app.run(debug=True,port=8005) 
