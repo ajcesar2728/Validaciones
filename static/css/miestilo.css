@@ -64,7 +64,7 @@ input[type=button], input[type=submit], input[type=reset] {
     border-color        : black;
     border-width        : 2px;
     border-radius       : 4px;
-    color               : white;
+    color               : whitesmoke;
     text-transform      : capitalize;
     cursor              : pointer;
     display             : inline-block;
