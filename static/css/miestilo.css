@@ -13,6 +13,16 @@ body {
     left                : 30vw;
 }
 
+.registro {
+    width               : 40vw;
+    padding             : 16px;
+    border-radius       : 10px;
+    background-color    : mintcream;
+    position            : absolute;
+    top                 : 15vh;
+    left                : 20vw;
+}
+
 .fila {
     height              :30px;
 }
