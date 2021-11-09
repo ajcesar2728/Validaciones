@@ -1,24 +1,25 @@
 import sqlite3
+
+URL_BD = 'mibd.db'
+
 def accion(sql, datos) -> int:
-    """ Se encarga de ejecurar una consulta de acción, INSERT, UPDATE, DELETE """ 
+    """ Se encarga de ejecutar una consulta de acción, INSERT, UPDATE, DELETE """ 
     try:
-        with sqlite3.connect('midb.db') as con:
+        with sqlite3.connect(URL_BD) as con: # gestor de contextos por seguridad(ordena cierre de conexion)
             cur = con.cursor()
-            res = cur.execute(sql,datos).rowcount
+            res = cur.execute(sql,datos).rowcount # además le pido cuantas filas fueron afectadas 
             if res!=0:
                 con.commit()
-    except:
+    except Exception:
         res = 0
     return res
 
-def accion(sql, datos) -> int:
-    """ Se encarga de ejecurar una consulta de acción, INSERT, UPDATE, DELETE """ 
+def seleccion(sql, datos) -> list:
+    """ Se encarga de ejecurar una consulta de selección SELECT """ 
     try:
-        with sqlite3.connect('midb.db') as con:
+        with sqlite3.connect(URL_BD) as con:
             cur = con.cursor()
-            res = cur.execute(sql,datos).rowcount
-            if res!=0:
-                con.commit()
-    except:
-        res = 0
+            res = cur.execute(sql,datos).fetchall() # muestra todos los campos
+    except Exception:
+        res = []
     return res

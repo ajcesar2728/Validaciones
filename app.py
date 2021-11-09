@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, flash
 from markupsafe import escape
+from db import accion, seleccion
+from utils import email_valido, clave_valida
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
@@ -13,7 +15,7 @@ def index():
     return render_template("inicio.html")
 
 @app.route("/registro/", methods=['GET', 'POST'])
-def index():
+def registro():
     if request.method=='GET':
         return render_template("registro.html", nombre='Registro')
     else:
